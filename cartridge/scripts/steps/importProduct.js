@@ -8,9 +8,8 @@ const ProductMgr = require('dw/catalog/ProductMgr');
 const Transaction = require('dw/system/Transaction');
 const Logger = require('dw/system/Logger');
 
-const ImportProductDataJob = {
-    execute: function() {
-        try {
+function ImportProductDataJob() {
+
             // Specify the path to the data file
             const filePath = FileSystem.getFile('C:\Users\user\Downloads\Apparel_Catalog (1).csv');
             const reader = new FileReader(filePath);
@@ -35,13 +34,12 @@ const ImportProductDataJob = {
                 } else {
                     Logger.warn('Product not found: ' + sku);
                 }
-            }
 
             reader.close();
-        } catch (e) {
+        } 
             Logger.error('Error while importing product data: ' + e.message);
-        }
+        
     }
-};
+
 
 module.exports = ImportProductDataJob;

@@ -41,46 +41,7 @@
                         }
                     ]
                 }
-        },
-      
-      {
-        "@type-id":"custom.importProductData",
-        "@supports-parallel-execution":"true",
-        "@supports-site-context":"true",
-        "description":"Importing Product  Data",
-        "module":"laptop_ecommerce_custom_storefront/cartridge/scripts/steps/importProduct.js",
-        "function":"execute",
-       "parameters":
-      {
-        "parameter":[
-          {
-            "@name":"FileName",
-            "@type":"string",
-            "@required":"true",
-            "description":"A required string parameter."
-          }
-        ]
-          
-        },
-        "status-codes":
-        {
-                  "status":
-          [
-                      {
-                          "@code": "ERROR",
-                          "description": "Used when the step failed with an error."
-                      },
-                      {
-                          "@code": "FINISHED",
-              "description": "Used when the step finished successfully."
-                      },
-                      {
-                          "@code": "FINISHED_WITH_WARNINGS",
-              "description": "Used when the step finished with warnings."
-                      }
-                  ]
-            }
-      }
+        }
       ]
     }
   }
