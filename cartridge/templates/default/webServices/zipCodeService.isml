@@ -1,0 +1,12 @@
+<h1> ${pdict.status.country}</h1>
+
+
+  <isloop items="${pdict.status.places}" var="place">
+            <div>
+                <p>State: ${place.state}</p>
+                <p>Longitude: ${place.longitude}</p>
+                <p>Latitude: ${place.latitude}</p>
+            </div>
+        </isloop>
+
+

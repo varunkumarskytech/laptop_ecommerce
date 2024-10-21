@@ -1,0 +1,55 @@
+<!-- Login/Create Account Popup -->
+<style>
+    .offer-banner {
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #e6e6e6;
+        margin: 20px 0;
+    }
+
+    .offer-banner h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .offer-banner p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .offer-banner .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0073e6;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .offer-banner .button:hover {
+        background-color: #005bb5;
+    }
+</style>
+<div class="modal-dialog login-popup-dialog" role="document">
+    <div class="modal-content login-popup-content">
+        <div class=" modal-body login-popup-body">
+            <!-- offerBanner.isml -->
+            <button type="button" class="close login-popup-close" data-dismiss="modal"
+                aria-label="${Resource.msg('label.close', 'common', null)}">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="offer-banner">
+                <h2>Special Offer on Laptops!</h2>
+                <p>Sign in to get <strong>10% off</strong> on all laptops.</p>
+                <a href="${URLUtils.url('Login-Show')}" class="button">Sign In Now</a>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

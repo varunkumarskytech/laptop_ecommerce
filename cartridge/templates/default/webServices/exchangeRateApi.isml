@@ -1,0 +1,24 @@
+
+
+        <h1>Exchange Rates</h1>
+        <p>Base Currency: ${pdict.exchangeRates.base_code}</p>
+        <p>Last Update: ${pdict.exchangeRates.time_last_update_utc}</p>
+        <p>Next Update: ${pdict.exchangeRates.time_next_update_utc}</p>
+        
+        <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <isloop items="${Object.keys(pdict.exchangeRates.conversion_rates)}" var="currency">
+                    <tr>
+                        <td>${currency}</td>
+                        <td>${pdict.exchangeRates.conversion_rates[currency]}</td>
+                    </tr>
+                </isloop>
+            </tbody>
+        </table>
+

@@ -1,0 +1,57 @@
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 600px;
+            margin: 0 auto; /* Centering content horizontally */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .user-profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .user-profile img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .user-profile h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .user-profile p {
+            color: #666;
+            margin: 5px 0;
+        }
+        .user-profile strong {
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="content-container">
+        <isloop items="${pdict.status.results}" var="result">
+            <div class="user-profile">
+                <img src="${result.picture.large}" alt="${result.name.first} ${result.name.last}" class="user-profile-picture">
+                <h2>${result.name.title} ${result.name.first} ${result.name.last}</h2>
+                <p><strong>Gender:</strong> ${result.gender}</p>
+                <p><strong>Email:</strong> ${result.email}</p>
+                <p><strong>Date of Birth:</strong> ${result.dob.date}</p>
+                <p><strong>Age:</strong> ${result.dob.age}</p>
+                <p><strong>Phone:</strong> ${result.phone}</p>
+                <p><strong>Cell:</strong> ${result.cell}</p>
+                <p><strong>Location:</strong> ${result.location.street.number} ${result.location.street.name}, ${result.location.city}, ${result.location.state}, ${result.location.country}, ${result.location.postcode}</p>
+                <p><strong>Coordinates:</strong> Latitude ${result.location.coordinates.latitude}, Longitude ${result.location.coordinates.longitude}</p>
+                <p><strong>Timezone:</strong> ${result.location.timezone.description} (${result.location.timezone.offset})</p>
+                <p><strong>Nationality:</strong> ${result.nat}</p>
+            </div>
+        </isloop>
+    </div>
+    
+

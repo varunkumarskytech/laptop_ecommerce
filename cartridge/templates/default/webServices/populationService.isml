@@ -1,0 +1,89 @@
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto; /* Centering content horizontally */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .source-info {
+            margin-top: 20px;
+        }
+        .source-info h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .source-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .source-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .source-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="content-container">
+        <h1>United States Population Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Population</th>
+                </tr>
+            </thead>
+            <tbody>
+                <isloop items="${pdict.status.data}" var="item">
+                    <tr>
+                        <td>${item.Year}</td>
+                        <td>${item.Population}</td>
+                    </tr>
+                </isloop>
+            </tbody>
+        </table>
+
+        <div class="source-info">
+            <isloop items="${pdict.status.source}" var="source">
+                <h2>Source Information</h2>
+                <p><strong>Source Name:</strong> ${source.annotations.source_name}</p>
+                <p><strong>Source Description:</strong> ${source.annotations.source_description}</p>
+                <p><strong>Dataset Name:</strong> <a href="${source.annotations.dataset_link}" target="_blank">${source.annotations.dataset_name}</a></p>
+                <p><strong>Table ID:</strong> ${source.annotations.table_id}</p>
+                <p><strong>Topic:</strong> ${source.annotations.topic}</p>
+                <p><strong>Subtopic:</strong> ${source.annotations.subtopic}</p>
+            </isloop>
+        </div>
+    </div>
+

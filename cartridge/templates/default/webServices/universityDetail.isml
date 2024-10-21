@@ -1,0 +1,56 @@
+
+    <style>
+        .university-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Adjust as needed */
+        }
+        .university-info {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .university-info h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .university-info p {
+            margin: 5px 0;
+            color: #34495e;
+        }
+        .university-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .university-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="university-container">
+        <div>
+            <h1>University Information</h1>
+            <isloop items="${pdict.universities}" var="university">
+                <div class="university-info">
+                    <h2>${university.name}</h2>
+                    <p><strong>Country:</strong> ${university.country} (${university.alpha_two_code})</p>
+                    <p><strong>State/Province:</strong> ${university['state-province'] ? university['state-province'] : 'N/A'}</p>
+                    <p><strong>Domain:</strong> 
+                        <isloop items="${university.domains}" var="domain">
+                            <a href="http://${domain}" target="_blank">${domain}</a><br>
+                        </isloop>
+                    </p>
+                    <p><strong>Web Page:</strong> 
+                        <isloop items="${university.web_pages}" var="webPage">
+                            <a href="${webPage}" target="_blank">${webPage}</a><br>
+                        </isloop>
+                    </p>
+                </div>
+            </isloop>
+        </div>
+    </div>
+
