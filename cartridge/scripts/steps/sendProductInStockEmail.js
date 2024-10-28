@@ -12,7 +12,7 @@ var Mail = require("dw/net/Mail");
 var Transaction = require("dw/system/Transaction");
 
 
-function execute(parameters) {
+function importproduct(parameters) {
   var productDetails = [];
   var notifyMeIterator = CustomObjectMgr.getAllCustomObjects("NotifyMe");
   while (notifyMeIterator.hasNext()) {
@@ -100,7 +100,7 @@ function closeWriter(writer) {
 }
 
 module.exports = {
-  execute: execute,
+  importproduct: importproduct,
   generateProductInStockXML: generateProductInStockXML,
   sendMail:sendMail
 };
